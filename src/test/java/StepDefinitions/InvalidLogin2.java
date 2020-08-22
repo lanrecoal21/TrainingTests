@@ -26,29 +26,29 @@ public class InvalidLogin2 {
         LocatorAndMethods Page = PageFactory.initElements(driver, LocatorAndMethods.class);
         Page.ClickFirstSignInLink();
 
-//    }
-//
-//    @When("^I enter username \"([^\"]*)\"$")
-//    public void iEnterUsername(String email) throws Throwable {
-//        driver.findElement(By.name("email")).sendKeys(email);
-//
-//    }
-//
-//    @And("^I enter \"([^\"]*)\"$")
-//    public void iEnter(String password) throws Throwable {
-//        driver.findElement(By.name("passwd")).sendKeys(password);
-//    }
-//
-//    @When("^I press login$")
-//    public void iPressLogin() {
-//        driver.findElement(By.name("SubmitLogin")).click();
-//    }
-//
-//    @Then("^I should get \"([^\"]*)\"$")
-//    public void iShouldGet(String ErrorMessages) throws Throwable {
-//        String ExpectedErrorMessage = ErrorMessages;
-//        String ActualErrorMessage = driver.findElement(By.xpath("//*[@id=\'center_column\']/div[1]/ol/li")).getText();
-//        Assert.assertEquals(ExpectedErrorMessage, ActualErrorMessage);
-//        System.out.println(ErrorMessages);
+    }
+
+    @When("^I enter username \"([^\"]*)\"$")
+    public void iEnterUsername(String email) throws Throwable {
+        driver.findElement(By.name("email")).sendKeys(email);
+
+    }
+
+    @And("^I enter \"([^\"]*)\"$")
+    public void iEnter(String password) throws Throwable {
+        driver.findElement(By.name("passwd")).sendKeys(password);
+    }
+
+    @When("^I press login$")
+    public void iPressLogin() {
+        driver.findElement(By.name("SubmitLogin")).click();
+    }
+
+    @Then("^I should get \"([^\"]*)\"$")
+    public void iShouldGet(String ErrorMessages) throws Throwable {
+        String ExpectedErrorMessage = ErrorMessages;
+        String ActualErrorMessage = driver.findElement(By.xpath("//*[@id=\'center_column\']/div[1]/ol/li")).getText();
+        Assert.assertEquals(ExpectedErrorMessage, ActualErrorMessage);
+        System.out.println(ErrorMessages);
     }
 }

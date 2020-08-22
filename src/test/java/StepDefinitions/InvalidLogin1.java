@@ -41,6 +41,7 @@ public class InvalidLogin1 {
         String  ActualMessage = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/p")).getText();
         Assert.assertEquals(ExpectedMessage, ActualMessage);
         System.out.println(ActualMessage);
+        driver.close();
     }
 
 
