@@ -1,4 +1,4 @@
-@InvalidLogin2
+@Ignore
 Feature: InvalidLogin2
 
   Scenario Outline: Invalid login credentials should return error messages
