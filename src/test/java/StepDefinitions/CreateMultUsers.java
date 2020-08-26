@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Pages.LocatorAndMethods;
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
@@ -11,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class CreateMultUsers {
@@ -37,6 +39,7 @@ public class CreateMultUsers {
 
     @And("^I enter all mandatory details$")
     public void iEnterAllMandatoryDetails() throws InterruptedException {
+        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
         driver.findElement(By.name("SubmitCreate")).click();
         Thread.sleep(20000);
         driver.findElement(By.id("id_gender2")).click();
@@ -49,7 +52,8 @@ public class CreateMultUsers {
         driver.findElement(By.id("lastname")).sendKeys("Obanla");
         driver.findElement(By.id("address1")).sendKeys("siilitie 15, ");
         driver.findElement(By.id("city")).sendKeys("chicago");
-        new Select(driver.findElement(By.id("id_state"))).selectByVisibleText("Illinois");
+        page.Selectstate();
+//        new Select(driver.findElement(By.id("id_state"))).selectByVisibleText("Illinois");
         driver.findElement(By.name("postcode")).sendKeys("00000");
         driver.findElement(By.id("phone_mobile")).sendKeys("04012345678");
         driver.findElement(By.id("alias")).clear();
