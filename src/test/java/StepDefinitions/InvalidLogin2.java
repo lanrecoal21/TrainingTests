@@ -1,14 +1,12 @@
 package StepDefinitions;
 
-import Pages.LocatorAndMethods;
+import Pages.InvalidLogin2Methods;
 import cucumber.api.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-
-
 
 public class InvalidLogin2 {
     public WebDriver driver;
@@ -23,7 +21,7 @@ public class InvalidLogin2 {
 
         @And("^I press the SignIn link$")
         public void iPressTheSignInLink() {
-        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
+        InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
         page.ClickSignInLink();
 
         //  driver.findElement(By.linkText("Sign in")).click();
@@ -33,7 +31,7 @@ public class InvalidLogin2 {
     public void iEnterUsername(String email)  {
         // JavascriptExecutor js = (JavascriptExecutor) driver;
         // js.executeScript("window.scrollBy(0,250)", "");
-        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
+        InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
         page.typeUsername(email);
         // driver.findElement(By.id("email")).sendKeys(email);
     }
@@ -42,14 +40,14 @@ public class InvalidLogin2 {
     public void iEnter(String password) {
         // JavascriptExecutor js = (JavascriptExecutor) driver;
         // js.executeScript("window.scrollBy(0,250)", "");
-        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
+        InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
         page.typePassword(password);
         // driver.findElement(By.id("passwd")).sendKeys(password);
 
     }
     @When("^I press login$")
     public void iPressLogin() {
-        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
+        InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
         page.ClickSignIn();
         // driver.findElement(By.xpath("//*[@id=\"SubmitLogin\"]/span"));
 
@@ -57,7 +55,7 @@ public class InvalidLogin2 {
 
     @Then("^I should get \"([^\"]*)\"$")
     public void iShouldGet(String ErrorMessage){
-        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
+        InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
         page.ViewErrorMessage();
         String ActualErrorMessage = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]")).getText();
         Assert.assertTrue("ActualErrorMessage", ErrorMessage.contains("There is 1 error"));
