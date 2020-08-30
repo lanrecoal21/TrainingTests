@@ -6,11 +6,11 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
 public class LocatorAndMethods {
-    // Define Your locators here
+    // Declare Your Locators here
     @FindBy(how = How.LINK_TEXT, using = "Sign in")
     public static WebElement SingInLink;
 
-    @FindBy(how = How.ID, using = "id_state")
+    @FindBy(how = How.LINK_TEXT, using = "id_state")
     public static WebElement State;
 
 
@@ -18,10 +18,10 @@ public class LocatorAndMethods {
 
 
 
+      // Declare you methods here
     public void ClickFirstSignInLink() {SingInLink.click();}
-    public void Selectstate() {
-        Select state = new Select(State);
+    public void Selectstate() { Select state =new Select(State);
         state.selectByVisibleText("Illinois");
-    }
 
+    }
 }
