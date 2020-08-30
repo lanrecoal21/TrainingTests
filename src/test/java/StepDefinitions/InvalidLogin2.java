@@ -24,7 +24,7 @@ public class InvalidLogin2 {
         InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
         page.ClickSignInLink();
 
-        //  driver.findElement(By.linkText("Sign in")).click();
+
     }
 
     @When("^I enter username \"([^\"]*)\"$")
@@ -33,7 +33,7 @@ public class InvalidLogin2 {
         // js.executeScript("window.scrollBy(0,250)", "");
         InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
         page.typeUsername(email);
-        // driver.findElement(By.id("email")).sendKeys(email);
+
     }
 
     @And("^I enter \"([^\"]*)\"$")
@@ -42,15 +42,13 @@ public class InvalidLogin2 {
         // js.executeScript("window.scrollBy(0,250)", "");
         InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
         page.typePassword(password);
-        // driver.findElement(By.id("passwd")).sendKeys(password);
+
 
     }
     @When("^I press login$")
     public void iPressLogin() {
         InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
         page.ClickSignIn();
-        // driver.findElement(By.xpath("//*[@id=\"SubmitLogin\"]/span"));
-
     }
 
     @Then("^I should get \"([^\"]*)\"$")
@@ -60,11 +58,6 @@ public class InvalidLogin2 {
         String ActualErrorMessage = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]")).getText();
         Assert.assertTrue("ActualErrorMessage", ErrorMessage.contains("There is 1 error"));
         System.out.println(ActualErrorMessage);
-
-        //String  ExpectedErrorMessage = "ErrorMessage";
-        //String  ActualErrorMessage = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]")).getText();
-        //Assert.assertEquals(ExpectedErrorMessage, ActualErrorMessage);
-        //System.out.println(ActualLoggedInUSer);
 
         driver.close();
     }
