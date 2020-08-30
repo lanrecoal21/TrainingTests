@@ -1,6 +1,6 @@
 package StepDefinitions;
 
-import Pages.InvalidLogin2Methods;
+import Pages.LocatorAndMethods;
 import cucumber.api.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -21,7 +21,7 @@ public class InvalidLogin2 {
 
         @And("^I press the SignIn link$")
         public void iPressTheSignInLink() {
-        InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
+        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
         page.ClickSignInLink();
 
 
@@ -31,7 +31,7 @@ public class InvalidLogin2 {
     public void iEnterUsername(String email)  {
         // JavascriptExecutor js = (JavascriptExecutor) driver;
         // js.executeScript("window.scrollBy(0,250)", "");
-        InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
+        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
         page.typeUsername(email);
 
     }
@@ -40,20 +40,20 @@ public class InvalidLogin2 {
     public void iEnter(String password) {
         // JavascriptExecutor js = (JavascriptExecutor) driver;
         // js.executeScript("window.scrollBy(0,250)", "");
-        InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
+        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
         page.typePassword(password);
 
 
     }
     @When("^I press login$")
     public void iPressLogin() {
-        InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
+        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
         page.ClickSignIn();
     }
 
     @Then("^I should get \"([^\"]*)\"$")
     public void iShouldGet(String ErrorMessage){
-        InvalidLogin2Methods page = PageFactory.initElements(driver, InvalidLogin2Methods.class);
+        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
         page.ViewErrorMessage();
         String ActualErrorMessage = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]")).getText();
         Assert.assertTrue("ActualErrorMessage", ErrorMessage.contains("There is 1 error"));
