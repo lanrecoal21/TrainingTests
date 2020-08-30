@@ -1,5 +1,8 @@
 package StepDefinitions;
 
+import Base.TestBase;
+import Pages.LocatorAndMethods;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -9,19 +12,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class CreateNewUser {
+import static sun.plugin2.main.client.PluginCookieSelector.initialize;
 
-    public WebDriver driver;
+public class CreateNewUser extends TestBase{
     public int random;
+    @Before
+    public void setup() throws Throwable{
+        initialize();
+    }
 
     @Given("^I am on the application homescreen$")
     public void i_am_on_the_application_homescreen() throws Throwable {
-        System.setProperty("webdriver.chrome.driver", "c:\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.navigate().to("http://automationpractice.com/index.php");
-//        driver.manage().window().maximize();
+    driver.manage().deleteAllCookies();
+    driver.get(CONFIG.getProperty("URL"));
+    driver.manage().window().maximize();
 
     }
 
@@ -97,7 +104,9 @@ public class CreateNewUser {
     }
     @When("^I choose my state$")
     public void i_choose_my_state() throws Throwable {
-        new Select  (driver.findElement(By.id("id_state"))).selectByVisibleText("Illinois");
+        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
+        page.Selectstate();
+//        new Select  (driver.findElement(By.id("id_state"))).selectByVisibleText("Illinois");
 
     }
     @And("^I enter my postcode$")

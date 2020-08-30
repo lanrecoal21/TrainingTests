@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Base.TestBase;
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
@@ -13,8 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class CreateMultUsers {
-    public WebDriver driver;
+public class CreateMultUsers  extends TestBase {
 
     @Given("^Im on Homepage$")
     public void imOnHomepage() {
@@ -30,8 +30,8 @@ public class CreateMultUsers {
 
     @And("^I enter \"([^\"]*)\" address$")
     public void iEnterAddress(String email) throws Throwable {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window. scrollBy(0,250)", "");
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window. scrollBy(0,250)", "");
         driver.findElement(By.id("email_create")).sendKeys(email);
     }
 
@@ -67,8 +67,8 @@ public class CreateMultUsers {
         String ActualMessage = driver.findElement(By.xpath("//*[@id=\"center_column\"]/h1")).getText();
         Assert.assertEquals(ExpectedMessage, ActualMessage);
         System.out.println(ActualMessage);
-        driver.close();
-    }
+//        driver.quit();
+  }
 
 
 

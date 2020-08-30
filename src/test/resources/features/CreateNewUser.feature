@@ -1,4 +1,4 @@
-@ignore
+@CreateNewUser
 Feature: Create New User
 
 Scenario: User should be able to register account
