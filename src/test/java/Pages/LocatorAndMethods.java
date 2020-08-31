@@ -45,10 +45,13 @@ public class LocatorAndMethods {
         @FindBy(how = How.XPATH, using = "//*[@id=\"submitAccount\"]/span")
         public static WebElement CustomerRegister;
 
+    @FindBy(how = How.LINK_TEXT, using = "id_state")
+    public static WebElement State;
 
 
 
 
+<<<<<<< HEAD
         public void clickHomePageSignIn() { HomePageSignIn.click();}
         public void typeEmail(String email){ EmailAddress.sendKeys(email);}
         public void clickCreateUser(){CreateUser.click();}
@@ -73,3 +76,14 @@ public class LocatorAndMethods {
 
 
     }
+=======
+
+
+      // Declare you methods here
+    public void ClickFirstSignInLink() {SingInLink.click();}
+    public void Selectstate() { Select state =new Select(State);
+        state.selectByVisibleText("Illinois");
+
+    }
+}
+>>>>>>> master

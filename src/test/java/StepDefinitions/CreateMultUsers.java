@@ -47,6 +47,7 @@ public class CreateMultUsers {
 
     @And("^I enter all mandatory details$")
     public void iEnterAllMandatoryDetails() throws InterruptedException {
+<<<<<<< HEAD
         Thread.sleep(2000);
         CreateMultUsersMethod page = PageFactory.initElements(driver,CreateMultUsersMethod.class);
         page.clickGender();
@@ -79,6 +80,27 @@ public class CreateMultUsers {
         //driver.findElement(By.id("phone_mobile")).sendKeys("04012345678");
         //driver.findElement(By.id("alias")).clear();
         //driver.findElement(By.id("alias")).sendKeys("Lion House");
+=======
+        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
+        driver.findElement(By.name("SubmitCreate")).click();
+        Thread.sleep(20000);
+        driver.findElement(By.id("id_gender2")).click();
+        driver.findElement(By.name("customer_firstname")).sendKeys("Elvia");
+        driver.findElement(By.xpath("//*[@id=\"customer_lastname\"]")).sendKeys("Obanla");
+        driver.findElement(By.id("passwd")).sendKeys("training");
+        driver.findElement(By.id("firstname")).clear();
+        driver.findElement(By.id("firstname")).sendKeys("Elvia");
+        driver.findElement(By.id("lastname")).clear();
+        driver.findElement(By.id("lastname")).sendKeys("Obanla");
+        driver.findElement(By.id("address1")).sendKeys("siilitie 15, ");
+        driver.findElement(By.id("city")).sendKeys("chicago");
+        page.Selectstate();
+//        new Select(driver.findElement(By.id("id_state"))).selectByVisibleText("Illinois");
+        driver.findElement(By.name("postcode")).sendKeys("00000");
+        driver.findElement(By.id("phone_mobile")).sendKeys("04012345678");
+        driver.findElement(By.id("alias")).clear();
+        driver.findElement(By.id("alias")).sendKeys("Lion House");
+>>>>>>> master
     }
 
     @When("^I click on the register button$")
