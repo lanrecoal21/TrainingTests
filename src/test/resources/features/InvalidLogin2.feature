@@ -1,14 +1,14 @@
-@InvalidLogin2
+@ignore
 Feature: InvalidLogin2
 
   Scenario Outline: Invalid login credentials should return error messages
 
     Given I am on the landing page
     And I press the SignIn link
-#    When I enter username "<email>"
-#    And I enter "<password>"
-#    When I press login
-#    Then I should get "<ErrorMessages>"
+    When I enter username "<email>"
+    And I enter "<password>"
+    When I press login
+    Then I should get "<ErrorMessages>"
 
     Examples:
       |email                      |password                 |ErrorMessages               |

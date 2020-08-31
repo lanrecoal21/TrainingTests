@@ -1,4 +1,4 @@
-@ignore
+@CreateMultUsers
 Feature: Create Multiple Users
 
   Scenario Outline: As an admin, I want to create multiple users

@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Pages.CreateMultUsersMethod;
 import Pages.LocatorAndMethods;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
@@ -23,8 +24,8 @@ public class InvalidLogin2 {
 
     @And("^I press the SignIn link$")
     public void iPressTheSignInLink() {
-        LocatorAndMethods Page = PageFactory.initElements(driver, LocatorAndMethods.class);
-        Page.ClickFirstSignInLink();
+        LocatorAndMethods page = PageFactory.initElements(driver, LocatorAndMethods.class);
+        page.clickHomePageSignIn();
 
     }
 
